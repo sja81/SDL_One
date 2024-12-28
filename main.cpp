@@ -10,10 +10,14 @@ int main(int argc, char* args[])
 	SDL_Window* gw = NULL;
 	SDL_Surface* gs = NULL;
 
+
 	if (SDL_Init(SDL_INIT_VIDEO) < 0) {
 		std::cout << "SDL could not initialize! SDL_Error: " << SDL_GetError() << "\n";
 		return -1;
 	} 
+
+	std::cout << "Number of displays: " << SDL_GetNumVideoDisplays() << "\n";
+
 
 	gw = SDL_CreateWindow("SDL Tutorial", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, SCREEN_WIDTH, SCREEN_HEIGHT, SDL_WINDOW_SHOWN);
 
